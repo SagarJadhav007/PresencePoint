@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class SettingsScreen extends StatefulWidget {
-  const SettingsScreen({super.key});
+class Profile extends StatefulWidget {
+  const Profile({super.key});
 
   @override
-  _SettingsScreenState createState() => _SettingsScreenState();
+  _Profile createState() => _Profile();
 }
 
-class _SettingsScreenState extends State<SettingsScreen> {
+class _Profile extends State<Profile> {
   @override
   void initState() {
     super.initState();
@@ -16,17 +16,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF222831),
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(
           "Profile",
           style: TextStyle(
-            color: Colors.white,
+            color: Colors.black,
             fontSize: 22,
             fontWeight: FontWeight.bold,
           ),
         ),
-        backgroundColor: Color(0xFF2E3B4E),
+        backgroundColor: Colors.amber,
         elevation: 0,
       ),
       body: SingleChildScrollView(
@@ -46,10 +46,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
             SizedBox(height: 12),
             Text(
-              "sagar rajak",
+              "User name",
               style: TextStyle(
                 fontSize: 22,
-                color: Colors.white,
+                color: Colors.black,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -57,7 +57,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             Container(
               padding: EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: Color(0xFF393E46),
+                color: Colors.amber,
                 borderRadius: BorderRadius.circular(15),
                 boxShadow: [
                   BoxShadow(

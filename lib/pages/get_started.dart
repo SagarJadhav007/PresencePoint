@@ -1,9 +1,73 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:presence_point/pages/home_page.dart';
 import 'package:presence_point/pages/login.dart';
 import 'package:presence_point/pages/register.dart';
+import 'package:presence_point/Auth/authentication.dart';
 
-class GetStarted extends StatelessWidget {
+class GetStarted extends StatefulWidget {
   const GetStarted({super.key});
+
+  @override
+  State<GetStarted> createState() => _GetStartedState();
+}
+
+class _GetStartedState extends State<GetStarted> {
+  @override
+  void initState() {
+    super.initState();
+    _checkIfUserIsLoggedIn();
+  }
+
+  void _checkIfUserIsLoggedIn() {
+    User? user = FirebaseAuth.instance.currentUser;
+    if (user != null) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => HomePage()),
+      );
+    }
+  }
+
+  Future<void> _google() async {
+    try {
+      UserCredential? result = await signInWithGoogle();
+      if (result?.user != null) {
+        // Show success message
+        await _showMessageDialog(
+            "Registration successful. You can now log in.");
+
+        // Check if widget is still mounted before navigating
+        if (mounted) {
+          Navigator.pushReplacementNamed(context, "/home");
+        }
+      } else {
+        // In case the sign-in result is null, handle it
+        _showMessageDialog("Google Sign-In failed, please try again.");
+      }
+    } catch (e) {
+      // Handle and display errors
+      print("Error during Google Sign-In: $e");
+      _showMessageDialog("Error signing in with Google: $e");
+    }
+  }
+
+  Future<void> _showMessageDialog(String message) async {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text("Message"),
+        content: Text(message),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text("OK"),
+          ),
+        ],
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +116,7 @@ class GetStarted extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Loginpage()))
+                                    builder: (context) => LoginPage()))
                           },
                           style: OutlinedButton.styleFrom(
                             shape: RoundedRectangleBorder(
@@ -124,7 +188,7 @@ class GetStarted extends StatelessWidget {
               width: 300,
               height: 50,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: _google,
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.white,
                   shape: RoundedRectangleBorder(
