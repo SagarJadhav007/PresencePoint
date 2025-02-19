@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:presence_point/pages/get_started.dart';
-import 'package:presence_point/pages/home_page.dart';
+import "./pages/home_page.dart";
+import 'package:presence_point/pages/analytics_page.dart';
 
 class Wrapper extends StatelessWidget {
   const Wrapper({super.key});

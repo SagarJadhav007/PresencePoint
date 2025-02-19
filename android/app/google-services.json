@@ -7,6 +7,43 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:845692898928:android:8ea675dfbac375f2e06eb5",
+        "android_client_info": {
+          "package_name": "com.Sagar.presence_point"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "845692898928-d8tbe46t5rfnf8hvami0hsjajdvr0eid.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.Sagar.presence_point",
+            "certificate_hash": "38c278b173b2522eace829bf4055bc66fa7b58e4"
+          }
+        },
+        {
+          "client_id": "845692898928-0p6l5icjkgfs1lq7mu1k78qarfe4mhga.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoK6EBqTgzYN2J6ZpvCRkSoD1VoQhChbU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "845692898928-0p6l5icjkgfs1lq7mu1k78qarfe4mhga.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:845692898928:android:aaa2dc6730a69526e06eb5",
         "android_client_info": {
           "package_name": "com.example.presence_point"

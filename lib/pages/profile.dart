@@ -126,7 +126,7 @@ class _Profile extends State<Profile> {
                   ),
                 ),
                 child: Text(
-                  "Logout",
+                  "Sign Out",
                   style: TextStyle(
                     fontSize: 16,
                     color: Colors.white,

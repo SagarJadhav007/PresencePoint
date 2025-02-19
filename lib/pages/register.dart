@@ -14,6 +14,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final TextEditingController _passwordController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
+  bool _isObscure = true;
+
   Future<void> _register() async {
     if (!_formKey.currentState!.validate()) {
       return;
@@ -70,6 +72,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
+        appBar: AppBar(
+          title: Text(
+            "Presence Point",
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          centerTitle: true,
+          backgroundColor: Colors.amber,
+        ),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -77,10 +90,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
               key: _formKey,
               child: Column(
                 children: [
-                  const SizedBox(height: 80),
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
+                      SizedBox(
+                        height: 75,
+                      ),
                       Text(
                         "Register",
                         style: TextStyle(
@@ -91,11 +106,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 25),
+                  const SizedBox(height: 20),
                   const Image(
-                    image: AssetImage('assets/Img2.jpg'),
-                    height: 70,
-                    width: 100,
+                    image: AssetImage('assets/RegisterImg.png'),
+                    height: 200,
+                    width: 400,
                   ),
                   const SizedBox(height: 25),
                   TextFormField(
@@ -138,7 +153,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   const SizedBox(height: 15),
                   TextFormField(
                     controller: _passwordController,
-                    obscureText: true,
+                    obscureText: _isObscure,
                     decoration: InputDecoration(
                       icon: const Icon(Icons.lock),
                       filled: true,
@@ -146,6 +161,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       hintText: "Password",
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
+                      ),
+                      suffixIcon: IconButton(
+                        icon: Icon(_isObscure
+                            ? Icons.visibility
+                            : Icons.visibility_off),
+                        onPressed: () {
+                          setState(() {
+                            _isObscure = !_isObscure;
+                          });
+                        },
                       ),
                     ),
                     validator: (value) {

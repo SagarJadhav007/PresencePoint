@@ -2,7 +2,8 @@ import "package:firebase_core/firebase_core.dart";
 import 'package:flutter/material.dart';
 import "./wrapper.dart";
 import "./pages/login.dart";
-import "./pages/home_page.dart";
+import "pages/analytics_page.dart";
+import "pages/home_page.dart";
 import "./pages/register.dart";
 import "./pages/profile.dart";
 
@@ -18,6 +19,7 @@ Future<void> main() async {
       '/home': (context) => HomePage(),
       '/register': (context) => RegisterScreen(),
       '/profile': (context) => Profile(),
+      '/analytics': (context) => AnalyticsPage(),
     },
   ));
 }
