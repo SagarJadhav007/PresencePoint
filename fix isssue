@@ -1,0 +1,5 @@
+Follow theses steps to follow if you get URI issue on your project after importing it from Github:
+
+flutter pub upgrade
+flutter clean
+flutter pub get

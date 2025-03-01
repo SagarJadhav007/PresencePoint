@@ -36,6 +36,14 @@ dependencies:
   cupertino_icons: ^1.0.8
   firebase_core: ^3.11.0
   firebase_auth: ^5.4.2
+<<<<<<< HEAD
+=======
+  google_sign_in: ^6.2.2
+  pie_chart: ^5.4.0
+  location: ^8.0.0
+  permission_handler: ^11.3.1
+  fl_chart: ^0.70.2
+>>>>>>> 2c880cab9d5624df16230191e9199765d3e7cca3
 
 dev_dependencies:
   flutter_test:
@@ -64,6 +72,8 @@ flutter:
     - assets/Img2.jpg
     - assets/GetStarted.png
     - assets/google.png
+    - assets/LoginImg.png
+    - assets/RegisterImg.png
   # Ensure the image file exists or correct the path
   #   - images/a_dot_ham.jpeg
 
