@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "845692898928",
+    "project_id": "presencepoint-d0bda",
+    "storage_bucket": "presencepoint-d0bda.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:845692898928:android:aaa2dc6730a69526e06eb5",
+        "android_client_info": {
+          "package_name": "com.example.presence_point"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoK6EBqTgzYN2J6ZpvCRkSoD1VoQhChbU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
